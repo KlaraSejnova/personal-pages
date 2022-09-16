@@ -31,25 +31,29 @@ form {
   display: flex;
   flex-direction: row;
 }
-.delay-1 {
-  animation-delay: 2s;
-}
-.delay-2 {
-  animation-delay: 4s;
-}
-.delay-3 {
-  animation-delay: 6s;
-}
 .word {
-  /* position: absolute; */
   font-size: 30px;
   animation: drop 10s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
   font-family: "Bebas Neue", cursive;
+  opacity: 0;
+}
+.delay-1 {
+  opacity: 0;
+}
+.delay-2 {
+  animation-delay: 2s;
+}
+.delay-3 {
+  animation-delay: 4s;
 }
 @keyframes drop {
-  100% {
+  0% {
     opacity: 0;
-    transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(500px);
   }
 }
