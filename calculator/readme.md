@@ -1,0 +1,1 @@
+For now the calculator is working when an user clicks on the button, to write the numbers in input is not working yet
