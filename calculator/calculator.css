@@ -22,10 +22,6 @@ input {
     text-align: right;
 }
 .math {
-    display: flex;
-    flex-direction: column;
-}
-.functions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -35,6 +31,7 @@ button {
     margin: 10px;
     border-radius: 15px;
     border: 1px solid #f4f4f4;
+    cursor: pointer;
 }
 button:hover {
     background-color: #aaaaaa;
