@@ -3,11 +3,9 @@ body {
     font-size: 18px;
     position: relative;
     margin: 0 auto;
-    overflow-x: hidden; 
-    
+    overflow-x: hidden;    
   }
-  
-  .paperOverlay {
+    .paperOverlay {
     position: absolute;
     overflow: hidden;
     top: 0;
@@ -33,12 +31,19 @@ body {
     font-weight: 600;
     border-bottom: solid 1px black;
 }
+
 .project {
     display: flex;
     flex-direction: row ;
     padding: 100px 20px 100px 24px;
     gap: 60px;
+    flex-wrap: wrap;
     font-family: 'IM Fell English', serif;
+}
+.lt, .en, .cz {
+  flex-basis: 400px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 .menu >  div > a {
     text-decoration: none;
@@ -105,7 +110,6 @@ blockquote::before {
     border-bottom: 1px solid black;
   }
   .program {
-    display: none;
     padding: 60px;
     font-size: 18px;
   }
@@ -133,6 +137,9 @@ blockquote::before {
     gap: 20px;
     font-size: 24px;
      }
+     @media (max-width:1250px) {
+      .years > ul {flex-direction: column;}
+     }
      .year {
         padding: 10px;
     cursor: pointer;
@@ -149,7 +156,8 @@ blockquote::before {
   }
   img {
     border-radius: 25px;
-    width: 500px;
+    width: 100%;
+  height: auto;
   }
   footer {
     display: flex;
@@ -159,7 +167,174 @@ blockquote::before {
     padding-left: 200px;
     border-top: 1px solid black;
  }
+ 
  footer > p > a {
     text-decoration: none;
     color: black; 
  }
+ .title-program {
+font-size: 20px;
+text-align: center;
+ }
+ .glider-slide {
+  font-size: 18px;
+  padding: 30px;
+  max-width: 500px;
+  text-align: left;
+ }
+ .glider-contain {
+  max-width: 500px;
+ }
+ .glider-contain .dots {
+  position: absolute;
+  bottom: -70px;
+  left: 57px;
+  width: 200px;
+  flex-wrap: nowrap;
+}
+.glider-dots {
+  user-select: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+}
+.glider-contain .dots .glider-dot.active {
+  background-color: #0095a0;
+  height: 4px;
+  margin-top: 6px;
+}
+.glider-contain .dots .glider-dot {
+  margin-left: -3.5px;
+  padding: 0;
+  width: 33%;
+  height: 2px;
+  background-color: #ebefef;
+}
+.glider-dot:hover, .glider-dot:focus, .glider-dot.active {
+  background: #a89cc8;
+}
+
+.glider-contain .arrow.glider-next {
+  right: auto;
+  left: 288px;
+  bottom: -82px;
+}
+.glider-contain .arrow.glider-prev {
+  transform: rotate(180deg);
+  left: 0;
+}
+.glider-contain .arrow {
+  bottom: -78px;
+  height: fit-content;
+  top: auto;
+}
+.glider-next.disabled, .glider-prev.disabled {
+  opacity: .25;
+  color: #666;
+  cursor: default;
+}
+.glider-prev, .glider-next {
+  user-select: none;
+  position: absolute;
+  outline: none;
+  background: none;
+  padding: 0;
+  z-index: 2;
+  font-size: 40px;
+  text-decoration: none;
+  left: -23px;
+  border: 0;
+  top: 30%;
+  cursor: pointer;
+  color: #666;
+  opacity: 1;
+  line-height: 1;
+  transition: opacity .5s cubic-bezier(0.17, 0.67, 0.83, 0.67),color .5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.buttons {
+  position: absolute;
+  margin-top: -76px;
+}
+ @media (max-width:750px) {
+  menu, .project, .teachers, .history-part {
+    margin: 0 20px;
+    justify-content: center;
+  }
+  .history-part {
+    padding-bottom: 30px;
+  }
+  .switch {
+    flex-direction: row;
+  }
+  .menu {
+    flex-direction: column;
+    font-size: 24px;
+    gap: 20px;
+    margin: 0;
+  }
+  .teachers {
+    flex-direction: column;
+  }
+  .project {
+    padding-bottom: 40px;
+  }
+  .text {
+    padding: 10px;
+    margin-top: 20px;
+    max-width: none;
+  }
+  .program {
+    padding: 10px;
+  }
+  footer{
+    padding-left: 10px;
+   }
+ 
+  .buttons img {
+    display: block;
+  }
+  .img {
+    width: auto;
+    padding-left: 0;
+    align-self: unset;
+    padding-bottom: 64px;
+  }
+  .one-slide {
+    display: flex;
+    flex-direction: column;
+  }
+  .buttons {
+    position: unset;
+  }
+  .glider-slide {
+    padding: 10px;
+    max-width: 500px;
+    text-align: left;
+   }
+  .glider-contain .arrow.glider-prev {
+    transform: rotate(180deg);
+    top: unset;
+    left: -24px;
+    bottom: 62%;
+  }
+  .glider-contain .arrow.glider-next {
+    top: unset;
+    left: unset;
+    right:-24px;
+    bottom: 62%;
+  }
+  .glider::-webkit-scrollbar-thumb {
+    background-color: white;
+  }
+ .glider-prev, .glider-next {
+    top: unset;
+    left: unset;
+    bottom: 62%;
+    float:right;
+  }
+ .glider-contain .dots {
+    display: none;
+  }
+}

@@ -23,6 +23,10 @@ function show2() {
 let list = document.querySelectorAll('.year');
 
   for (let i = 0; i < list.length; i++) {  
+    list[0].nextElementSibling.classList.add("show");
+list[0].parentNode.classList.add("border");
+list[0].classList.add("active");
+list[0].style.marginBottom = '0';
     if (list[i].nextElementSibling.className === "program"){
       list[i].addEventListener("click", openOnlyOne);
       list[i].addEventListener("click", openClose); 
@@ -50,3 +54,34 @@ let list = document.querySelectorAll('.year');
     this.classList.add("active");
     this.style.marginBottom = '0';
   }
+  
+  window.addEventListener('load', function () {
+    [].forEach.call(document.querySelectorAll('.glider'), function (ele) {
+        ele.addEventListener('glider-slide-visible', function (event) {
+            var glider
+                = Glider(this); console.log('Slide Visible %s', event.detail.slide)
+        });
+        ele.addEventListener('glider-slide-hidden', function (event) {
+            console.log('Slide Hidden %s', event.detail.slide)
+        });
+        ele.addEventListener('glider-refresh', function (event) {
+            console.log('Refresh')
+        });
+        ele.addEventListener('glider-loaded', function
+            (event) {
+                console.log('Loaded')
+        });
+        new Glider(ele, {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          scrollLock: true,
+          draggable: false,
+          dots: ele.parentNode.querySelector('.dots'),
+          arrows: {
+              prev: ele.parentNode.querySelector('.glider-prev'),
+              next: ele.parentNode.querySelector('.glider-next')
+          },
+          rewind: true
+        });
+    });
+  });
