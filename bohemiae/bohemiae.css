@@ -1,6 +1,7 @@
 body {
   font-family: "IM Fell English", serif;
   font-size: 18px;
+  color: #27221f;
   position: relative;
   margin: 0 auto;
   overflow-x: hidden;
@@ -21,7 +22,7 @@ body {
 .project,
 .teachers,
 .history-part {
-  margin: auto 200px;
+  margin: auto 400px;
   justify-content: center;
 }
 .menu {
@@ -29,7 +30,7 @@ body {
   display: flex;
   flex-direction: row;
   padding: 40px 20px 24px;
-  gap: 60px;
+  gap: 45px;
   font-size: 30px;
   font-weight: 600;
   border-bottom: solid 1px black;
@@ -168,15 +169,19 @@ img {
 footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   bottom: 0;
   width: 100%;
-  padding-left: 200px;
+  padding: 20px 0;
   border-top: 1px solid black;
 }
 
-footer > p > a {
+footer > div > a {
   text-decoration: none;
-  color: black;
+  color: #27221f;
+}
+footer:nth-child(2) {
+  align-self: flex-end;
 }
 .title-program {
   font-size: 20px;
@@ -194,8 +199,8 @@ footer > p > a {
 .glider-contain .dots {
   position: absolute;
   bottom: -70px;
-  left: 57px;
-  width: 200px;
+  left: 157px;
+  width: 180px;
   flex-wrap: nowrap;
 }
 .glider-dots {
@@ -207,7 +212,7 @@ footer > p > a {
   padding: 0;
 }
 .glider-contain .dots .glider-dot.active {
-  background-color: #0095a0;
+  background-color: #27221f;
   height: 4px;
   margin-top: 6px;
 }
@@ -226,12 +231,12 @@ footer > p > a {
 
 .glider-contain .arrow.glider-next {
   right: auto;
-  left: 288px;
+  left: 350px;
   bottom: -82px;
 }
 .glider-contain .arrow.glider-prev {
   transform: rotate(180deg);
-  left: 0;
+  left: 100px;
 }
 .glider-contain .arrow {
   bottom: -78px;
