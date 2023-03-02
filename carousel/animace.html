@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="animace.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="carousel">
+            <div class="carousel-item">
+                <div class="hero">
+                    <div class="text">
+                        <h1>Title of the hero long title over two lines</h1>
+                        <h3>Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Nulla non arcu lacinia neque faucibus fringilla. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. </h3>
+                        <div class="tlacitka">
+                            <button class="download">download free trial</button>
+                            <button class="learn">learn more</button>
+                        </div>    
+                    </div>
+                    <div class="image">
+                        <picture>
+                        <img src="first.jpg" alt="First slide" width="611" height="400">
+                        </picture>
+                    </div>   
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero right">
+                    <div class="image">
+                        <picture>
+                        <img src="second.png" alt="Second slide" width="611" height="400">
+                        </picture>
+                    </div> 
+                    <div class="text">
+                        <h1>Different title to see changes</h1>
+                        <h3>Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Nulla non arcu lacinia neque faucibus fringilla. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. </h3>     
+                        <div class="tlacitka">
+                            <button class="download">download free trial</button>
+                            <button class="learn">learn more</button>   
+                        </div>           
+                    </div>
+                </div>  
+            </div>
+            <div class="carousel-item">
+                <div class="hero left">
+                    <div class="image">
+                        <picture>
+                        <img src="third.png" alt="Third slide" width="611" height="400">
+                        </picture>
+                    </div> 
+                    <div class="text left">
+                        <h1>Here goes title for third hero</h1>
+                        <h3>Mauris suscipit, ligula sit amet pharetra semper, nibh ante cursus purus, vel sagittis velit mauris vel metus. Nulla non arcu lacinia neque faucibus fringilla. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. </h3>
+                        <div class="tlacitka">
+                            <button class="download">download free trial</button>
+                            <button class="learn">learn more</button>
+                        </div>                     
+                    </div>
+                </div>  
+            </div>
+        <div>
+    </header> 
+    <div class="prev" onclick="slide('prev')">&lt;</div>
+    <div class="next" onclick="slide('next')">&gt;</div>
+    
+<script type="text/javascript" src="animace.js"></script> 
+</body>
+</html>
