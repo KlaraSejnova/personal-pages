@@ -1,0 +1,117 @@
+* {
+  margin: auto 0;
+}
+body {
+  height: 200vh;
+}
+#second-nav {
+  position: sticky;
+  display: grid;
+  grid-template-rows: 2;
+  top: -1px;
+  transition: 0.01s;
+}
+#first,
+#second {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-left: 200px;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  gap: 12px;
+}
+#first {
+  background-color: #444;
+  padding-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#second {
+  background-color: white;
+  box-shadow: 0px 3px 3px 3px lightgrey;
+  color: #444;
+  background: white;
+}
+.menu-item,
+.nav-item {
+  flex-basis: 200px;
+}
+.nav-item {
+  padding-bottom: 15px;
+  border-bottom: 5px solid white;
+}
+.menu-item:hover {
+  color: grey;
+}
+.nav-item:hover {
+  border-bottom: 5px solid #333;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: #444;
+}
+/* styles for when the header is in sticky mode */
+div.isSticky > div#second {
+  color: white;
+  background: #444;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-left: 200px;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+  gap: 12px;
+}
+
+div.isSticky > div#second > div.nav-item > a:visited {
+  color: white;
+}
+div.isSticky > div#second > div.nav-item > a {
+  color: white;
+}
+div.isSticky > div#second > div.nav-item {
+  border-bottom: 5px solid #444;
+}
+div.isSticky > div#second > div.nav-item:hover {
+  border-bottom: 5px solid white;
+}
+#nav-application,
+#nav-Fullstack {
+  display: none;
+}
+#nav-application.show,
+#nav-Fullstack.show {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  text-align: left;
+  padding: 20px 0px 20px 0;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  box-shadow: 0px 0px 3px 3px lightgrey;
+  background-color: white;
+  width: 100%;
+  z-index: -1;
+}
+#nav-application > h1,
+#nav-Fullstack > h1 {
+  font-size: 16px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.item {
+  padding-left: 200px;
+  height: 30px;
+}
+/* .item-a {
+  height: 40px;
+} */
