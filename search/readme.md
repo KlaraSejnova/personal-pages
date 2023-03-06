@@ -1,0 +1,1 @@
+basic search input field, search through the text in cards
