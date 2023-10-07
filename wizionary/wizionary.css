@@ -1,6 +1,38 @@
-#waveform ::part(cursor):before {
-  content: "🏄";
+* {
+  color: #9d375b;
+  background-color: #12151a;
+  font-family: "Teko", sans-serif;
+  font-size: 30px;
 }
-#waveform ::part(region) {
-  font-family: fantasy;
+body {
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+#waveform ::part(cursor):before {
+  content: attr(data-before);
+}
+/* #waveform {
+  margin-bottom: 50px;
+} */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+input {
+  accent-color: #9d375b;
+  margin-left: 30px;
+}
+
+button {
+  border: none;
+}
+.show {
+  display: none;
+}
+svg {
+  height: 50px;
 }
