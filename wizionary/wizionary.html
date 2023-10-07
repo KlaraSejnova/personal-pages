@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="wizionary.css" />
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <!-- <script type="module" src="wizionary.js"></script> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="waveform">
+      <!-- the waveform will be rendered here -->
+    </div>
+    <label>
+      Zoom: <input type="range" min="10" max="1000" value="100" />
+    </label>
+    <div style="margin: 1em 0 2em">
+      <button id="play">Play/Pause</button>
+    </div>
+  </body>
+  <script type="module" src="wizionary.js"></script>
+</html>
