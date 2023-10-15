@@ -9,7 +9,6 @@ body {
   margin-left: 100px;
   margin-right: 100px;
 }
-
 .container {
   display: grid;
   gap: 1em;
@@ -60,7 +59,13 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 input[type="button"] {
   border: none;
-  font-size: 40px;
+  font-size: 60px;
+}
+#zoomin {
+  cursor: zoom-out;
+}
+#zoomout {
+  cursor: zoom-in;
 }
 
 button#play {

@@ -32,7 +32,8 @@ wavesurfer.on("interaction", () => {
   document.getElementById("pause").classList.toggle("show");
   document.getElementById("play").classList.toggle("show");
 });
-// Update the zoom level on slider change
+// Update the zoom level on slider change - if we would like to have zoom as a slider, if so, change css for input[type="range"] {
+// display: none to display:block} and for #zoomin,#zoomout {  display: none;};
 wavesurfer.once("decode", () => {
   const slider = document.querySelector('input[type="range"]');
 
