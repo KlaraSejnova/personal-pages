@@ -9,13 +9,6 @@ body {
   margin-left: 100px;
   margin-right: 100px;
 }
-/* #waveform ::part(cursor):before {
-  content: var(--content, "ahoj");
-} */
-
-/* #waveform {
-  margin-bottom: 50px;
-} */
 
 .container {
   display: grid;
