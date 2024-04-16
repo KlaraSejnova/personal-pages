@@ -1,0 +1,103 @@
+.btn,
+.rotate .swipe .cross {
+  position: relative;
+  perspective: 1000px;
+  color: black;
+  height: 90px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid black;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.rotate:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+.rotate:hover:before {
+  transform: rotate(0deg);
+}
+.swipe {
+  transition: color 1s ease;
+}
+.swipe:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background-color: violet;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: transform 1s;
+}
+.swipe:hover:before {
+  transform: translateX(0);
+}
+.swipe:hover {
+  color: white;
+}
+.cross {
+  transition: color 1s ease;
+}
+.cross:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: black;
+  left: 0;
+  top: 0;
+  transform: scaleX(0);
+  transition: transform 1s;
+  z-index: -1;
+}
+.cross:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: black;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transform: scaleY(0);
+  transition: transform 1s;
+}
+.cross:hover {
+  color: white;
+}
+.cross:hover:before {
+  transform: scaleX(100%);
+}
+.cross:hover::after {
+  transform: scaleY(100%);
+}
+.bold {
+  position: relative;
+  color: rgb(255, 0, 0);
+  height: 90px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid rgb(255, 0, 0);
+  z-index: 100;
+  overflow: hidden;
+  letter-spacing: -1px;
+  transition: all 1s ease;
+}
+.bold:hover {
+  font-weight: 600;
+  border: 3px solid rgb(255, 0, 0);
+  letter-spacing: 2px;
+}
