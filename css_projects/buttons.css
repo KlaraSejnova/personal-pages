@@ -1,5 +1,5 @@
 .btn,
-.rotate .swipe .cross {
+.rotate .swipe .cross .content {
   position: relative;
   perspective: 1000px;
   color: black;
@@ -100,4 +100,24 @@
   font-weight: 600;
   border: 3px solid rgb(255, 0, 0);
   letter-spacing: 2px;
+}
+
+.content:before {
+  position: absolute;
+  content: "YEAH!";
+  color: white;
+  left: 0;
+  top: 0;
+  background-color: violet;
+  width: 100%;
+  height: 100%;
+  /* z-index: -1; */
+  transform: translateY(-100%);
+  transition: transform 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content:hover:before {
+  transform: translateY(0);
 }
