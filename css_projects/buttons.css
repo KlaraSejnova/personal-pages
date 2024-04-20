@@ -3,10 +3,10 @@
 }
 .btn {
   position: relative;
-  perspective: 1000px;
   color: black;
   height: 90px;
   width: 200px;
+  text-transform: uppercase;
   background-color: white;
   border: 1px solid black;
   z-index: 100;
@@ -16,6 +16,7 @@
 .btn:before {
   position: absolute;
   content: "";
+  text-transform: uppercase;
   left: 0;
   top: 0;
   width: 100%;
@@ -25,7 +26,6 @@
 
 .rotate:before {
   background-color: yellow;
-
   transform-origin: bottom left;
   transform: rotate(-90deg);
   transition: transform 1s;
@@ -38,7 +38,6 @@
 }
 .swipe:before {
   background-color: violet;
-
   transform: translateX(-100%);
   transition: transform 1s;
 }
@@ -78,14 +77,9 @@
   transform: scaleY(100%);
 }
 .bold {
-  position: relative;
   color: rgb(255, 0, 0);
-  height: 90px;
-  width: 200px;
   background-color: white;
   border: 1px solid rgb(255, 0, 0);
-  z-index: 100;
-  overflow: hidden;
   letter-spacing: -1px;
   transition: all 1s ease;
 }
@@ -197,4 +191,172 @@
 }
 .circular:hover {
   color: white;
+}
+.threelayers {
+  background-color: forestgreen;
+  overflow: visible;
+}
+.threelayers:before {
+  content: "Button";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: orange;
+  transform-origin: top;
+  transform: rotateX(270deg);
+  transition: all 0.5s ease-in-out;
+}
+.threelayers:after {
+  content: "Button";
+  position: absolute;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  transform-origin: top;
+  transform: rotateX(270deg);
+  z-index: -1;
+  transition: all 0.5s 0.5s ease-in-out;
+}
+.threelayers:hover:before,
+.threelayers:hover:after {
+  transform: rotateX(0deg);
+  /* z-index: 100; */
+}
+
+.layersswap {
+  background-color: transparent;
+  color: yellow;
+  border-color: yellow;
+  overflow: visible;
+}
+
+.layersswap:before {
+  content: "Button";
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+  opacity: 1;
+}
+.layersswap:after {
+  content: "Button";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: gray;
+  transition: all 0.5s;
+  left: -100%;
+  opacity: 0;
+  transform: scale(0) rotateY(0);
+}
+
+.layersswap:hover:before {
+  left: 100%;
+  opacity: 0;
+  transform: scale(0) rotateY(360deg);
+}
+.layersswap:hover:after {
+  left: 0;
+  transform: scale(1) rotateY(360deg);
+  opacity: 1;
+}
+
+.circles {
+  border: 0;
+  background-color: transparent;
+  color: red;
+  overflow: visible;
+  transition: all 0.3s 0.3s;
+}
+.circles:before,
+.circles::after {
+  content: "";
+  top: 50%;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.circles::before {
+  box-shadow: -100px 0 0 red;
+}
+.circles::after {
+  right: 0;
+  box-shadow: 100px 0 0 red;
+}
+
+.circles:hover::before {
+  left: 50%;
+  box-shadow: 30px 0 0 red;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+  opacity: 1;
+}
+.circles:hover::after {
+  right: 50%;
+  box-shadow: -30px 0 0 red;
+  transform: translateX(50%) translateY(-50%);
+  z-index: -1;
+  opacity: 1;
+}
+
+.circles:hover {
+  background-color: red;
+  color: white;
+  z-index: 100;
+}
+.hovereffect {
+  border: 0;
+  overflow: visible;
+  color: white;
+  transition: all 0.5s;
+}
+.hovereffect:before {
+  background-color: aqua;
+  /* left: -6px;
+  top: -6px; */
+  transition: all 0.5s;
+  transform-origin: top;
+  mix-blend-mode: multiply;
+}
+.hovereffect:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.604);
+  left: 6px;
+  top: 6px;
+  z-index: -1;
+  mix-blend-mode: multiply;
+  transition: all 0.5s;
+  transform-origin: bottom;
+}
+.hovereffect:hover {
+  color: black;
+}
+.hovereffect:hover::before {
+  top: 9px;
+  left: 0;
+  transform: perspective(1000px) rotateX(-75deg);
+}
+.hovereffect:hover::after {
+  top: 9px;
+  left: 0;
+  transform: perspective(1000px) rotateX(75deg);
 }
