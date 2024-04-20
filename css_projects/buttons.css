@@ -1,5 +1,5 @@
 .btn,
-.rotate .swipe .cross .content .glowing {
+.rotate .swipe .cross .content .glowing .swape {
   position: relative;
   perspective: 1000px;
   color: black;
@@ -141,4 +141,45 @@
 }
 .glowing:hover::before {
   transform: translateX(100%) rotate(45deg);
+}
+.swape {
+  background-color: black;
+}
+.swape::before {
+  content: "Hover me";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  color: black;
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+}
+.swape::after {
+  content: "Hover me";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  color: black;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+}
+
+.swape:hover::before {
+  transform: translate(100%, -100%);
+}
+
+.swape:hover::after {
+  transform: translate(0, 0);
 }
