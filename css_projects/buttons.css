@@ -688,3 +688,73 @@ span:nth-child(4) {
   transform-origin: bottom;
   transition-delay: 0s;
 }
+
+.glass {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.051);
+  border-radius: 50px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid (250, 52, 52, 0.2);
+  border-bottom: 1px solid (255, 255, 255, 0);
+  color: white;
+  transition: all 0.5s ease;
+  backdrop-filter: blur(15px);
+}
+.glass:hover {
+  letter-spacing: 3px;
+}
+
+.glass::before {
+  background-color: rgba(253, 253, 253, 0.051);
+  width: 50%;
+  left: -5px;
+  transform: skewX(15deg);
+  transition: all 0.5s ease;
+}
+
+.glass:hover::before {
+  width: 110%;
+}
+.gls {
+  display: flex;
+  background-color: #0c2461;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 200px;
+}
+.gls::before {
+  content: "";
+  top: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  background-color: #ff0461;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.gls:hover::before {
+  top: 30px;
+  width: 130px;
+  height: 20px;
+}
+.gls::after {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 10px;
+  background-color: #ff0461;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.gls:hover::after {
+  bottom: 30px;
+  width: 130px;
+  height: 20px;
+}
