@@ -535,3 +535,66 @@
 .fourborders:hover .four::after {
   bottom: 0;
 }
+.twoparts {
+  border: none;
+  overflow: visible;
+  color: white;
+  font-weight: 700;
+}
+.twoparts:before {
+  background-color: aqua;
+  transform: skewX(20deg) translateY(10%);
+  width: 50%;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.twoparts:hover::before {
+  background-color: aqua;
+  transform: skewX(0deg) translateY(0);
+  width: 50%;
+  left: 50%;
+  top: 0;
+}
+
+.twoparts:after {
+  content: "";
+  position: absolute;
+  background-color: coral;
+  transform: skewX(20deg) translateY(-10%);
+  height: 100%;
+  top: 5px;
+  left: 51%;
+  width: 50%;
+  z-index: -1;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.twoparts:hover::after {
+  background-color: coral;
+  transform: skewX(0deg) translateY(0);
+  width: 50%;
+  left: 0;
+  top: 0;
+}
+
+.rounded {
+  border: none;
+  overflow: visible;
+  border-radius: 50px;
+  background-color: grey;
+}
+
+.rounden:hover {
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.rounded::before {
+  background-color: grey;
+  border: none;
+  border-radius: 50px;
+  opacity: 1;
+  transition: all 0.4s;
+}
+
+.rounded:hover::before {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
