@@ -598,3 +598,93 @@
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
+
+.glow {
+  color: #1e9bff;
+  border: #1e9bff 2px solid;
+  overflow: visible;
+  transition: all 0.5s;
+}
+.glow:hover {
+  border: transparent 2px solid;
+  color: white;
+}
+.glow::before {
+  background-color: #1e9bff;
+  box-shadow: 0 0 10px #1e9bff, 0 0 30px #1e9bff, 0 0 60px #1e9bff;
+  transform: scale(0);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.25s;
+}
+.glow:hover::before {
+  transform: scale(1);
+  transition-delay: 0.5;
+}
+.glow span {
+  position: absolute;
+  background-color: #1e9bff;
+  box-shadow: 0 0 10px #1e9bff, 0 0 20px #1e9bff, 0 0 30px #1e9bff;
+}
+.glow span:nth-child(1),
+span:nth-child(3) {
+  height: 4px;
+  width: 30px;
+  transition-delay: 0.25s;
+}
+
+.glow span:nth-child(2),
+span:nth-child(4) {
+  height: 30px;
+  width: 4px;
+}
+.glow span:nth-child(1) {
+  left: -40px;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.25s;
+}
+
+.glow:hover span:nth-child(1) {
+  left: 50%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition-delay: 0s;
+}
+
+.glow span:nth-child(3) {
+  right: -40px;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.25s;
+}
+.glow:hover span:nth-child(3) {
+  right: 50%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition-delay: 0s;
+}
+
+.glow span:nth-child(2) {
+  top: -40px;
+  left: 50%;
+  transition: all 0.5s ease-in;
+  transition-delay: 0.25s;
+}
+.glow:hover span:nth-child(2) {
+  top: 50%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition-delay: 0s;
+}
+
+.glow span:nth-child(4) {
+  bottom: -40px;
+  left: 50%;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.25s;
+}
+
+.glow:hover span:nth-child(4) {
+  bottom: 50%;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition-delay: 0s;
+}
